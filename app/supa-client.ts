@@ -33,7 +33,23 @@ type Database = MergeDeep<
 
 const client = createClient<Database>(
 	process.env.SUPABASE_URL!,
-	process.env.SUPABASE_ANON_KEY!
+	process.env.SUPABASE_ANON_KEY!,
+	{
+		auth: {
+			persistSession: false,
+		},
+		global: {
+			headers: {
+				"Content-Type": "application/json",
+			},
+		},
+	}
 );
+
+if (!process.env.SUPABASE_URL || !process.env.SUPABASE_ANON_KEY) {
+	throw new Error(
+		"Supabase 환경 변수가 설정되지 않았습니다. SUPABASE_URL과 SUPABASE_ANON_KEY를 확인해주세요."
+	);
+}
 
 export default client;

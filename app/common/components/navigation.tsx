@@ -248,8 +248,8 @@ export default function Navigation({
 					<DropdownMenu>
 						<DropdownMenuTrigger asChild>
 							<Avatar>
-								<AvatarImage src="https://github.com/serranoarevalo.png" />
-								<AvatarFallback>N</AvatarFallback>
+								<AvatarImage src="https://github.com/asuracoder91.png" />
+								<AvatarFallback>A</AvatarFallback>
 							</Avatar>
 						</DropdownMenuTrigger>
 						<DropdownMenuContent className="w-56">
